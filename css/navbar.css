@@ -1,0 +1,114 @@
+* {
+    background-color: #fad4d4 ;
+    font-family: comic sans ms;
+}
+
+body{
+    background-color: #fad4d4 !important;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    padding: rem;
+    margin: 20px auto; /* Reduced margin to bring it closer to the header */
+    border-radius: 10px;
+}
+
+input{
+    border:none;
+    position: center;
+    width: 100%;
+    background-color: #fabec0;
+    padding: 10px;
+    font-size: 15px;
+}
+
+input[type="submit"]{
+    background-color: #fabec0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button{
+    background-color: #fabec0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.or{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+label{
+    color: transparent;
+}
+
+.navbar {
+    border-bottom: solid 1px;
+    margin: 0 50px 0 50px;
+}
+
+/* Header */
+:root {
+    --pink-main: #ff69b4;
+    --pink-light: #ffe4e1;
+    --pink-bg: #ffd6e8; 
+    --pink-hover: #ff85c0;
+    --white: #fff;
+}
+
+body {
+    background-color: var(--pink-bg);
+}
+
+.navbar {
+    background-color: var(--pink-bg); 
+    border-bottom: 1px solid var(--pink-main); 
+    padding: 0;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--pink-main) !important;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+    color: var(--pink-hover) !important;
+
+}
+
+.btn-login {
+    background-color: #ff91b9; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: all 0.3s ease; 
+}
+
+.btn-login:hover {
+    background-color: #ff6fa1; 
+    color: white;
+}

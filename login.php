@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = "Pengguna tidak ditemukan. Cek kembali email yang Anda masukkan.";
     }
 
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <i class="fas fa-lock"></i>
                     <input type="password" name="sandi" id="password" placeholder="Password" required>
                     <label for="password">Password</label>
+                    <?php if (isset($error)) {
+                    echo "<p style='color:red; text-align:center;'>$error</p>";
+                    }?>
+    
                 </div>
                 <p class="recover">
                     <a href="#">Recover Password</a>

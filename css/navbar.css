@@ -1,10 +1,10 @@
-* {
-    background-color: #fad4d4 ;
-    font-family: comic sans ms;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parisienne&display=swap');
+
+
+
 
 body{
-    background-color: #fad4d4 !important;
+    background-color: #fad4d4;
 }
 .container {
     display: flex;
@@ -15,6 +15,10 @@ body{
     padding: rem;
     margin: 20px auto; /* Reduced margin to bring it closer to the header */
     border-radius: 10px;
+}
+
+header{
+    background-color: #fad4d4;
 }
 
 input{
@@ -72,7 +76,7 @@ label{
 :root {
     --pink-main: #ff69b4;
     --pink-light: #ffe4e1;
-    --pink-bg: #ffd6e8; 
+    --pink-bg: #fad4d4; 
     --pink-hover: #ff85c0;
     --white: #fff;
 }

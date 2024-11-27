@@ -1,3 +1,12 @@
+<?php
+include "navbar.php";
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,42 +15,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Curhatkuy!</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/genre.css">
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="logo curhatkuy!.png" alt="Curhatkuy Logo" width="30" height="30">
-                        CURHATKUY!
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Tentang Curhatkuy!</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Cerita Mereka</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Curhat di Sini</a>
-                            </li>
-                            <li class="nav-item">
-                                <button class="btn btn-login ms-3">Login</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
     <main>
         <section class="hero">
             <h2>CERITA MEREKA</h2>
@@ -54,7 +30,7 @@
             <div class="story">
                 <img src="toxicfriends.png" alt="Toxic Friend">
                 <h3>TOXIC FRIEND</h3>
-                <button class="READ-MORE">READ MORE</button>
+                <button class="READ-MORE" onclick="location.href='isi/toxicfriend.php'">READ MORE</button>
             </div>
             <div class="story">
                 <img src="badpartner.png" alt="Bad Partner">

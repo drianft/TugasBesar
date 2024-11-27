@@ -8,11 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sandi = $_POST['sandi'];
 
     // Mencari pengguna berdasarkan email
-    $stmt = $koneksi->prepare("SELECT * FROM register_table WHERE email = ?");
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    $result = mysqli_query($koneksi, "SELECT * FROM register_table WHERE email = '$email'");
+    $user = mysqli_fetch_assoc($result);
 
     // Cek apakah pengguna ditemukan
     if ($user && password_verify($sandi, $user['sandi'])) {
@@ -21,12 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $error = "Password salah.";
     } 
+} else {
+    $error = "Pengguna tidak ditemukan. Cek kembali email yang Anda masukkan.";
 }
-    else {
-        $error = "Pengguna tidak ditemukan. Cek kembali email yang Anda masukkan.";
-    }
-
-    
 ?>
 
 <!DOCTYPE html>

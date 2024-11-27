@@ -1,8 +1,9 @@
 <?php
-include "connect.php";
-include "navbar.php";
+include "../connect.php";
+include "../navbar.php";
 
 $result = mysqli_query($koneksi, "SELECT * FROM register_table");
+$query = mysqli_query($koneksi, "SELECT * FROM isicurhat");
 
 ?>
 
@@ -35,6 +36,32 @@ $result = mysqli_query($koneksi, "SELECT * FROM register_table");
                     <td><?= $crht["nama"]; ?></td>
                     <td><?= $crht["email"];?></td>
                     <td><?= $crht["sandi"];?></td>
+                    <td>
+                        <a href="update.php?id=<?= $crht['id']; ?>" class="btn btn-info">Update</a> |
+                        <a href="delete.php?id=<?= $crht['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin menghapus?')">Delete</a>
+                    </td>
+                </tr>
+                <?php $i++; ?>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>nama samaran</th>
+                    <th>genre</th>
+                    <th>cerita</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1; ?>
+                <?php while ($crht = mysqli_fetch_assoc($query)) : ?>
+                <tr>
+                    <td><?= $i; ?></td>
+                    <td><?= $crht["namauser"]; ?></td>
+                    <td><?= $crht["genre"];?></td>
+                    <td><?= $crht["isi"];?></td>
                     <td>
                         <a href="update.php?id=<?= $crht['id']; ?>" class="btn btn-info">Update</a> |
                         <a href="delete.php?id=<?= $crht['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin menghapus?')">Delete</a>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curhatkuy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .narasi {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+      flex: 1;
+      background-color: #ffeaea;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #f44;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d33;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Narasi -->
+    <div class="narasi">
+      <h2>Kamu boleh curhat di sini</h2>
+      <p>
+        SILAHKAN TUANG PERASAAN KAMU DI SINI, JANGAN TAKUT UNTUK BEREKSPRESI DAN MENGELUARKAN SEMUANYA, YA!
+      </p>
+      <p>
+        Dengan mengirimkan curhatan berikut, kamu memberikan hak kepada <b>curhatkuy!</b> untuk mem-publish curhatan ini di website <b>curhatkuy!</b>, tentunya dengan menyamarkan nama kamu. Dengan membagikan curhatan kamu, kamu akan mendapatkan masukan yang mungkin berguna dari orang lain di luar sana.
+      </p>
+      <blockquote>
+        "You have to get lost before you find yourself." - <i>Paper Town</i>
+      </blockquote>
+    </div>
+
+    <!-- Formulir -->
+    <div class="form-container">
+      <h3>Curhatkuy!</h3>
+      <form>
+        <label for="name">Nama Samaran Kamu</label>
+        <input type="text" id="name" placeholder="Nama samaran kamu" required>
+        
+        <label for="genre">Pilih Genre</label>
+        <select id="genre" required>
+          <option value="">-- Pilih Genre --</option>
+          <option value="persahabatan">Persahabatan</option>
+          <option value="percintaan">Percintaan</option>
+          <option value="keluarga">Keluarga</option>
+          <option value="karier">Karier</option>
+        </select>
+        
+        <label for="curhatan">Curhatan Kamu</label>
+        <textarea id="curhatan" rows="6" placeholder="Tuliskan curhatan kamu di sini..." required></textarea>
+        
+        <button type="submit">Kirim Curhatan</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

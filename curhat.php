@@ -154,3 +154,15 @@ form button:hover {
 </div>
 </body>
 </html>
+<?php
+if (isset($success_message)) {
+    echo "<script>
+        alert('$success_message');
+        window.location.href = 'cerita.php?genre=$genre';
+    </script>";
+} elseif (isset($error_message)) {
+    echo "<script>
+        alert('$error_message');
+    </script>";
+}
+?>

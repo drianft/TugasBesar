@@ -1,19 +1,11 @@
 <?php
-include "../navbar.php";
+include "navbar.php";
 include "../connect.php";
 
-// Pastikan koneksi berhasil
+$query = mysqli_query($koneksi, "SELECT * FROM isicurhat WHERE genre = 'toxic-friend'" );
+$genre = isset($_GET['genre']) ? $mysqli->real_escape_string($_GET['genre']) : "";
 
-// Mendapatkan genre dari parameter GET
-$genre = isset($_GET['genre']) ? $koneksi->real_escape_string($_GET['genre']) : "";
-
-// Query untuk mendapatkan data film berdasarkan genre
-$query = "SELECT * FROM isicurhat WHERE genre = '$genre'";
-$result = $koneksi->query($query);
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -64,6 +56,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 100%; /* Tinggi penuh mengikuti container */
+    overflow-y: auto ;
 }
 
 .card {
@@ -77,40 +70,23 @@ footer {
     justify-content: space-between;
 }
 
+.kiri img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
 
     </style>
 </head>
 <body>
-<h1>Film Genre: <?= htmlspecialchars($genre) ?></h1>
-    <?php if ($result && $result->num_rows > 0): ?>
-        <table border="1" cellpadding="10" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Judul</th>
-                    <th>Deskripsi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1; ?>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= htmlspecialchars($row['namauser']) ?></td>
-                        <td><?= htmlspecialchars($row['isi']) ?></td>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>Tidak ada film dengan genre <?= htmlspecialchars($genre) ?>.</p>
-    <?php endif; ?>
-    <br>
-    <a href="pilih_genre.php">Pilih Genre Lain</a>
-    <!-- <div class="container">
+    <div class="container">
         <div class="kiri">
-            <img src="gambarGenre.png">
-            <h2><?= htmlspecialchars($genre) ?></h2>
+            <img src="toxicfriends.png" >
+            <h2>Toxic Friend</h2>
         <footer>
             <p>Curhatkuy!</p>
             <p>by kelompok delapan</p>
@@ -119,22 +95,27 @@ footer {
 
         <div class="kanan">
         <?php
-        // Loop untuk menampilkan data dari database
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+        if ($query->num_rows > 0) {
+            while ($row = $query->fetch_assoc()) {
+                $namauser = htmlspecialchars($row['namauser'] ?? 'Anonymus');
+                $isi = htmlspecialchars($row['isi'] ?? 'Tidak ada cerita');
+
+                // Batasi teks isi maksimal 200 karakter
+                $isi = strlen($isi) > 200 ? substr($isi, 0, 200) . "..." : $isi;
+
                 echo "<div class='card'>";
-                echo "<h3> " . htmlspecialchars($row['namauser'] ?? 'Anonymus') . "</h3>";
-                echo "<p>: " . htmlspecialchars($row['isi'] ?? 'Tidak ada cerita') . "</p>";
+                echo "<h6>" . $namauser . "</h6>";
+                echo "<p>: " . $isi . "</p>";
                 echo "</div>";
             }
-        $koneksi->close();
+        } else {
             echo "<p>Tidak ada data tersedia.</p>";
         }
-
+        
         // Tutup koneksi
         $koneksi->close();
         ?>
         </div>
-    </div> -->
+    </div>
 </body>
 </html>

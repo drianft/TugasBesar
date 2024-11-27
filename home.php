@@ -11,6 +11,7 @@ $isLoggedIn = isset($_SESSION['user']);
 $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,7 +179,6 @@ $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
             <div class="logout-container">
                 <a href="koneksi/logout.php" class="tombol-logout">Logout</a>
             </div>
-            
         <?php endif; ?>
     </footer>
 </body>

@@ -10,7 +10,7 @@ if (isset($_POST['submit'])){
     $query = "INSERT INTO register_table(nama, email, sandi) VALUES ('$username', '$email', '$password')";
 
     if(mysqli_query($koneksi, $query)){
-        header("Location: read.php");
+        header("Location: login.php");
         exit;
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($koneksi);

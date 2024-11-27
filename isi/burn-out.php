@@ -1,8 +1,8 @@
 <?php
 include "navbar.php";
-include "connect.php";
+include "../connect.php";
 
-$query = mysqli_query($koneksi, "SELECT * FROM isicurhat");
+$query = mysqli_query($koneksi, "SELECT * FROM isicurhat WHERE genre = 'burn-out'" );
 $genre = isset($_GET['genre']) ? $mysqli->real_escape_string($_GET['genre']) : "";
 
 ?>
@@ -56,6 +56,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 100%; /* Tinggi penuh mengikuti container */
+    overflow-y: auto ;
 }
 
 .card {
@@ -75,8 +76,8 @@ footer {
 <body>
     <div class="container">
         <div class="kiri">
-            <img src="gambarGenre.png">
-            <h2></h2>
+            <img src="burnout.png">
+            <h2>Burn Out</h2>
         <footer>
             <p>Curhatkuy!</p>
             <p>by kelompok delapan</p>
@@ -85,18 +86,23 @@ footer {
 
         <div class="kanan">
         <?php
-        // Loop untuk menampilkan data dari database
         if ($query->num_rows > 0) {
             while ($row = $query->fetch_assoc()) {
+                $namauser = htmlspecialchars($row['namauser'] ?? 'Anonymus');
+                $isi = htmlspecialchars($row['isi'] ?? 'Tidak ada cerita');
+
+                // Batasi teks isi maksimal 200 karakter
+                $isi = strlen($isi) > 200 ? substr($isi, 0, 200) . "..." : $isi;
+
                 echo "<div class='card'>";
-                echo "<h6> " . htmlspecialchars($row['namauser'] ?? 'Anonymus') . "</h3>";
-                echo "<p>: " . htmlspecialchars($row['isi'] ?? 'Tidak ada cerita') . "</p>";
+                echo "<h6>" . $namauser . "</h6>";
+                echo "<p>: " . $isi . "</p>";
                 echo "</div>";
             }
         } else {
             echo "<p>Tidak ada data tersedia.</p>";
         }
-
+        
         // Tutup koneksi
         $koneksi->close();
         ?>

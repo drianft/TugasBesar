@@ -76,7 +76,7 @@ footer {
 <body>
     <div class="container">
         <div class="kiri">
-            <img src="gambarGenre.png">
+            <img src="badpartner.png">
             <h2>Bad Partner</h2>
         <footer>
             <p>Curhatkuy!</p>

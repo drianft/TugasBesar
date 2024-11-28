@@ -28,40 +28,40 @@ include "navbar.php";
         <section class="stories">
             <div class="scroll-container">
             <div class="story">
-                <img src="toxicfriends.png" alt="Toxic Friend">
+                <img src="isi/toxicfriends.png" alt="Toxic Friend">
                 <h3>TOXIC FRIEND</h3>
                 <button class="READ-MORE" onclick="location.href='isi/toxicfriend.php'">READ MORE</button>
             </div>
             <div class="story">
-                <img src="badpartner.png" alt="Bad Partner">
+                <img src="isi/badpartner.png" alt="Bad Partner">
                 <h3>BAD PARTNER</h3>
                 <button class="READ-MORE">READ MORE</button>
             </div>
             <div class="story">
-                <img src="burnout.png" alt="Burn Out">
+                <img src="isi/burnout.png" alt="Burn Out">
                 <h3>BURN OUT</h3>
                 <button class="READ-MORE">READ MORE</button>
             </div>
             <div class="story">
-                <img src="hatefam.png" alt="Broken Home">
+                <img src="isi/hatefam.png" alt="Broken Home">
                 <h3>BROKEN HOME</h3>
                 <button class="READ-MORE">READ MORE</button>
             </div>
             <div class="story">
-                <img src="insecurity.jpg" alt="Insecurity">
+                <img src="isi/insecurity.jpg" alt="Insecurity">
                 <h3
                 >INSECURITY</h3>
                 <button class="READ-MORE">READ MORE</button>
             </div>
             <div class="story">
-                <img src="academicpress.jpg" alt="Broken Home">
+                <img src="isi/academicpress.jpg" alt="Broken Home">
                 <h3>ACADEMIC PRESSURE</h3>
                 <button class="READ-MORE">READ MORE</button>
             </div>
             <div class="story">
-                <img src="loneliness.jpg" alt="Broken Home">
+                <img src="isi/loneliness.jpg" alt="Broken Home">
                 <h3>LONELINESS</h3>
-                <button class="READ-MORE">READ MORE</button>
+                <button class="READ-MORE" onclick="location.href='isi/loneliness.php'">READ MORE</button>
             </div>
         <div class="story">
         </section>

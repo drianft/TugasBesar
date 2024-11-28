@@ -55,14 +55,15 @@ $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
         }
 
         .kotak {
-            border : solid;
             width: 580px;
             height: auto;
             margin-left: 30px ;
             margin-top : 10px ;
             border-radius: 50px;
+            background-color: #ffc6c3;
+            opacity: 0.8;
             padding: 20px;
-            box-shadow: -5px 5px 1px 4px  rgb(1, 1, 1)  ;
+            box-shadow: -5px 5px 1px 4px  #293d56;
         }
 
         

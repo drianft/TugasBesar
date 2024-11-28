@@ -20,25 +20,25 @@ include "navbar.php";
             display: flex;
             flex-direction: row;
             padding: 20px;
-            border: solid;
+            
         }
         .about-image {
             padding: 20px;
-            border: solid;
+            
         }
         .about-image img {
-            width: 10rem;
+            width: 13rem;
             height: 20rem;
             margin-right: 90px;
             
         }
 
-        @media screen and (max-width: 600px) {
+        @media  (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
             .about-image img {
-                width: 100%;
+                
                 height: auto;
                 margin-right: 20px;
             }

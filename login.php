@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Cek apakah pengguna ditemukan
     if ($user && password_verify($sandi, $user['sandi'])) {
         $_SESSION['user'] = $user['nama'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['namasamaran'] = $user['namasamaran'];
         header("Location: home.php"); // Berhasil login, pindah ke halaman utama
     } else {
         $error = "Password salah.";

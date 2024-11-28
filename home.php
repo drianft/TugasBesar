@@ -94,6 +94,18 @@ $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
             color: white;
         }
 
+        .tombol-dasbor{
+            text-decoration: none;
+            color: white;
+            background-color: #f85c70;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: solid;
+            margin-bottom: 10px;
+            position: absolute;
+            right: 20px;
+        }
+
         .logout-container{
             position: absolute;
             right: 20px;
@@ -143,7 +155,7 @@ $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
             <!-- Tombol "CURHAT SEKARANG" -->
             <div class="tombol">
             <?php if ($isLoggedIn): ?>
-                <a href="isi.php" class="tombol"><b>CURHAT SEKARANG</b></a>
+                <a href="curhat.php" class="tombol"><b>CURHAT SEKARANG</b></a>
             <?php else: ?>
                 <a href="login.php" class="tombol" onclick="showLoginAlert()"><b>CURHAT SEKARANG</b></a>
             <?php endif; ?>
@@ -157,7 +169,7 @@ $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
         
         <!-- Tombol "TEMUKAN TEMAN" -->
         <?php if ($isLoggedIn): ?>
-            <a href="temukan_teman.php" class="tombol"><b>TEMUKAN TEMAN</b></a>
+            <a href="genre.php" class="tombol"><b>TEMUKAN TEMAN</b></a>
         <?php else: ?>
             <a href="login.php" class="tombol" onclick="showLoginAlert()"><b>TEMUKAN TEMAN</b></a>
         <?php endif; ?>
@@ -173,6 +185,7 @@ $nama = $isLoggedIn ? $_SESSION['user'] : 'Guest';
    
     </div>
     <footer>
+        <a href="dasbor-user.php" class="tombol-dasbor">Dasbor</a>
         <p>&copy; Kelompok 8</p>
          <!-- Tombol Logout -->
         <?php if ($isLoggedIn): ?>
